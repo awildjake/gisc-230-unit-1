@@ -1,9 +1,7 @@
 :root {
-  --bg-color: #ffffff; /*#FCFCFC rgb(255, 252, 240)*/ 
-  --text-primary: rgb(16, 15, 15); /* #000000*/
-  --font-body: 'Libre Baskerville';
-  --link-bg: #454138;
-  --main-font: 'Libre Baskerville';;
+    --bg-color: #ffffff; /*#FCFCFC rgb(255, 252, 240)*/ 
+    --text-primary: rgb(16, 15, 15); /* #000000*/
+    --main-font: 'Libre Baskerville';
 }
 
 html {
@@ -28,33 +26,46 @@ body {
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 auto;
-  width: min(50ch, 100% - 4rem);
-  margin-left: auto;
-  margin-right: auto;
-  order: 2;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    width: min(50ch, 100% - 4rem);
+    margin-left: auto;
+    margin-right: auto;
+    order: 2;
 }
 
 .order-2 {
-  order: 2;
+    order: 2;
 }
 
 .post-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1em;
 }
 
 .post-title {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
-#my-map {
-    width: auto;
-    height: auto;
+p {
+    margin: 6px 0;
+}
+
+p + p {
+    margin: 1rem 0 0 0;
+}
+
+p a, ul a, ol a {
+    /* text-decoration: underline */
+    color: #518abb;
+}
+
+#map {
+    height: 300px;
+    width: 100%;
 }

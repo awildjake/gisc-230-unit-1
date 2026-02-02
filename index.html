@@ -7,6 +7,13 @@
 
         <!--put your external stylesheet links here-->
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" 
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
         <!--[if IE<9]>
             <link rel="stylesheet" href="css/style.ie.css">
         <![endif]-->         
@@ -21,6 +28,18 @@
                         GISC 230: Unit 1
                     </h1>
                 </div>
+                <p>
+                    This is a demo project prepared by Jake Wilde for the Spring
+                    2026 session of 
+                    <a href="https://catalog.sjsu.edu/preview_course_nopop.php?catoid=17&coid=172879">GISC 230</a>
+                    at San Jose State University.
+                </p>
+                <p>
+                    The content of this page was created by following <i>Web Mapping: A Workbook for Interactive Cartography and Visualization on the Open Web</i>,
+                    a web development workbook for making interactive maps.
+                </p>
+                <h2>Leaflet Box</h2>
+                <p><div id="map"></div></p>
             </article>
         </main>
         <!--put your initial page content here-->
@@ -30,6 +49,13 @@
 
         <!--put your external script links here-->
         <script>
+            var map = L.map('map').setView([37.334950108395034, -121.88113429729086], 13);
+
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+
             var mydiv = document.getElementById("mydiv");
             mydiv.addEventListener("click", function(){
                 alert("Hello World!");
