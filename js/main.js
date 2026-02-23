@@ -1,31 +1,34 @@
-const loadGeoJson = async function() {
-    try{
-        const response = await fetch('data/ed_1940_pct.geojson');
-
-        if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
-        }
-
-		const geojson = await response.json();
-		return geojson;
-    } catch (error) {
-		console.error('Failed to load GeoJSON:', error);
-		throw error;
-	}
-};
-
-const leafletMap = async function () {
-    var map = L.map('map').setView([37.334950108395034, -121.88113429729086], 13);
+// Construct the leaflet map object
+const initLeafletMap = function() {
+    const map = L.map('map').setView([37.334950108395034, -121.88113429729086], 13);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-	const geojson = await loadGeoJson();
+	return map;
+};
 
-	const layer = L.geoJSON(geojson).addTo(map);
+// Function to load GeoJSON data
+const loadGeoJson = async function() {
+	const response = await fetch('data/ed_1940_pct.geojson');
 	
+	if (!response.ok) {
+		throw new Error(`HTTP error: ${response.status}`);
+	}
+
+	return response.json();
+};
+
+// Function to add GeoJSON layer to map
+const addGeoJsonLayer = async function (map) {
+	try{
+		const geojson = await loadGeoJson();
+		return L.geoJSON(geojson).addTo(map);
+	} catch (error) {
+		console.error('Failed to load or add GeoJSON to map', error);
+	}
 };
 
 // Array of city names and populations
@@ -137,10 +140,14 @@ function addEvents(){
 
 // Initialize function
 function initialize(){
-    cities();
-    addColumns();
-    addEvents();
-    leafletMap();
+	// modeule functions
+	cities();
+	addColumns();
+	addEvents();
+
+	// stuff for my map
+	const map = initLeafletMap();
+	addGeoJsonLayer(map);
 };
 
-window.onload = initialize;
+initialize();
