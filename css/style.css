@@ -63,6 +63,6 @@ p a, ul a, ol a {
 }
 
 #map {
-    height: 300px;
+    height: 80ch;
     width: 100%;
 }
