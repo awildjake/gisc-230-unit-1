@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>GISC 230 Unit 1</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>GISC 230 Unit 1</title>
 
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" 
-        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-        crossorigin=""/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" 
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
 
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-        crossorigin=""></script>
-    </head>
-    <body>
-        <main class="order-2">
-            <article class="content">
-                <div class="post-header">
-                    <h1 class="post-title">
-                        GISC 230: Unit 1
-                    </h1>
-                </div>
-                <p>
-                    This is a demo project prepared by Jake Wilde for the Spring
-                    2026 session of 
-                    <a href="https://catalog.sjsu.edu/preview_course_nopop.php?catoid=17&coid=172879">GISC 230</a>
-                    at San Jose State University.
-                </p>
-                <p>
-                    The content of this page was created by following <i>Web Mapping: A Workbook for Interactive Cartography and Visualization on the Open Web</i>,
-                    a web development workbook for making interactive maps.
-                </p>
-                <h2>Chapter 2</h2>
-                <p>Creating a table using js.</p>
-                <div id="mydiv"></div>
-                <h2>Leaflet Box</h2>
-                <p><div id="map"></div></p>
-            </article>
-        </main>
-    </body>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+</head>
+<body>
+    <header class="header">
+        <h1>GISC 230: Unit 1</h1>
+    </header>
+    <nav class="navigation">
+        <a href="#introduction">Introduciton</a>
+        <a href="#module2">Module 2</a>
+        <a href="#leafletmap">Leaflet Map</a>
+    </nav>
+    <main class="content">
+        <section class="chapter" id="introduciton">
+            <h2>Introduciton</h2>
+            <p>
+                This is a demo project prepared by Jake Wilde for the Spring
+                2026 session of 
+                <a href="https://catalog.sjsu.edu/preview_course_nopop.php?catoid=17&coid=172879">GISC 230</a>
+                at San Jose State University.
+            </p>
+            <p>
+                The content of this page was created by following <i>Web Mapping: A Workbook for Interactive Cartography and Visualization on the Open Web</i>,
+                a web development workbook for making interactive maps.
+            </p>
+        </section>
+        <section class="chapter" id="module2">
+            <h2>Chapter 2</h2>
+            <p>Creating a table using only JavaScript.</p>
+            <div id="mydiv"></div>
+        </section>
+        <section class="chapter" id="leafletmap">
+            <h2>Leaflet Box</h2>
+            <p><div id="map"></div></p>
+        </section>
+    </main>
+</body>
+<script type="text/javascript" src="js/main.js"></script>
 </html>
