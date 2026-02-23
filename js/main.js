@@ -143,4 +143,4 @@ function initialize(){
     leafletMap();
 };
 
-window.onload = initialize();
+window.onload = initialize;
